@@ -14,8 +14,8 @@ function run() {
     const accessKeyId = getInput('accessKeyId');
     const secretAccessKey = getInput('secretAccessKey');
     const region = getInput('region');
-    const Message = getInput('message');
-    const PhoneNumber = getInput('phoneNumber');
+    const message = getInput('message');
+    const phoneNumber = getInput('phoneNumber');
 
     AWS.config.update({
       accessKeyId,
@@ -23,11 +23,10 @@ function run() {
       region,
     });
 
-    const newMessage = `${Message} [${actor} -> ${repository}]`;
-
+    const Message = `${message} [${actor} -> ${repository}]`;
     const params = {
-      newMessage,
-      PhoneNumber,
+      Message,
+      PhoneNumber: phoneNumber,
     };
 
     const SNS = new AWS.SNS();
