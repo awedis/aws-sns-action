@@ -1,0 +1,18 @@
+name: 'SNS'
+description: 'Send message via AWS SNS'
+branding:
+  icon: 'message-circle'
+  color: 'blue'
+inputs:
+  accessKeyId:
+    description: 'Access Key Id'
+    required: true
+  secretAccessKey:
+    description: 'Secret Access Key'
+    required: true 
+  region:
+    description: 'Region'
+    required: true
+runs:
+  using: 'node12'
+  main: 'dist/index.js'
