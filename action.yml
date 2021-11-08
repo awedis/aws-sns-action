@@ -13,6 +13,12 @@ inputs:
   region:
     description: 'Region'
     required: true
+  message:
+    description: 'Message'
+    required: true
+  phoneNumber:
+    description: 'Phone Number'
+    required: true
 runs:
   using: 'node12'
   main: 'dist/index.js'

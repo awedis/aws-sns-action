@@ -8,14 +8,23 @@ function run() {
     const accessKeyId = getInput('accessKeyId');
     const secretAccessKey = getInput('secretAccessKey');
     const region = getInput('region');
+    const Message = getInput('message');
+    const PhoneNumber = getInput('phoneNumber');
 
     AWS.config.update({
       accessKeyId,
       secretAccessKey,
       region,
     });
-    
-    console.log('Test SNS');
+
+    const params = {
+      Message,
+      PhoneNumber,
+    };
+
+    const SNS = new AWS.SNS();
+    const result = SNS.publish(params).promise();
+    console.log('result =>', result);
     
   } catch (error) {
     core.setFailed(error.message);

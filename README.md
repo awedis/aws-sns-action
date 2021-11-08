@@ -20,10 +20,12 @@ jobs:
       - name: Checkout [step]
         uses: actions/checkout@v2
       - name: SNS Action [step]
-        uses: awedis/aws-sns-action@v1.0
+        uses: awedis/aws-sns-action@v1.1
         id: sns
         with:
           accessKeyId: ${{ secrets.AWS_ACCESS_KEY_ID }}
           secretAccessKey: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           region: ${{ secrets.REGION }}
+          message: 'Hello from GitHub Actions'
+          phoneNumber: ${{ secrets.PHONE_NUMBER }}
 ```
