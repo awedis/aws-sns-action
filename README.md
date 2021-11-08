@@ -6,6 +6,8 @@ This action sends message via AWS SNS
   * `accessKeyId` (**Required** - Access Key Id)
   * `secretAccessKey` (**Required** - Secret Access Key)
   * `region` (**Required** - Region)
+  * `message` (**Required** - The message that you want to send)
+  * `phoneNumber` (**Required** - Phone number to send the message)
 
 ## Example
 ```yaml
